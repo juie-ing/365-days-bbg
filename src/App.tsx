@@ -186,13 +186,13 @@ function App() {
               
               <Message>{dailyMessage}</Message>
             </Card>
+            <DateText>📅 {formattedDate}</DateText>
+            {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
           </CenterColumn>
 
           <SideColumn>
             <SideImage src="/assets/gallery/Home.jpg" alt="Right decoration" />
           </SideColumn>
-          <DateText>📅 {formattedDate}</DateText>
-          {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
         </ContentRow>
 
         <ButtonContainer>
