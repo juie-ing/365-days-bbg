@@ -132,6 +132,9 @@ Starting this with saying that you are really AMAZING as fuck!`;
 
         <ContentRow>
           <CardColumn>
+          <Card>
+              <Message>{introMessage}</Message>
+         </Card>
 
             <Card>
               <h3>Today's Message 📅</h3>
@@ -145,11 +148,6 @@ Starting this with saying that you are really AMAZING as fuck!`;
           <Button>Surprise Me</Button>
         </ButtonContainer>
         </ContentRow>
-
-        
-        <Card>
-              <Message>{introMessage}</Message>
-         </Card>
 
         <Footer>
           Made with 💖 and lots of love for the most amazing person I know.
