@@ -61,28 +61,26 @@ function App() {
     <>
       <GlobalStyle />
       <AppContainer>
-        <Title>365 Days of You</Title>
+        <Title>365 Days Bbg </Title>
 
         <Card>
-          <h2>From Me To You 💌</h2>
+          <h2>To this lost bbg - SEJAL 💌</h2>
           <Message>
-            Hey beautiful soul! 🌟 I created this little corner of the internet just for you
-            because words can't express how grateful I am to have you in my life.
+            Hey prettiest sould inside out ! I built this little corner of the internet just for you — a soft place where my love for you lives in every pixel. Maybe I don’t always show it right, or say it enough, but this is me trying… trying to show you that you mean the world to me. This might be small, but it's filled with every ounce of love I have. I hope you feel it — in the words, the colors, the care. This is my heart, written in code.
             <br /><br />
             Every single day of this year, there's a special message waiting for you here.
             Some will make you laugh, some might make you cry (happy tears, I promise!),
-            and all of them come straight from my heart to yours. 💖
+            and all of them come straight from my heart to yours because you don’t have a bf bitch!!. 
             <br /><br />
-            <strong>You are loved, you are cherished, and you are absolutely incredible! ✨</strong>
+            <strong>You are loved, you are cherished, and you are absolutely incredible!And The most imp YOU ARE STRONG</strong>
           </Message>
         </Card>
 
         <Card>
           <h2>Today's Message 📅</h2>
           <Message>
-            🎉 Happy New Year bestie!<br />
-            Starting this year with gratitude for having you in my life.<br />
-            You make every day brighter! ✨
+            🎉 Welcome to first day !<br />
+            Starting this with saying that you are really AMAZING as fuck! 
           </Message>
         </Card>
 
