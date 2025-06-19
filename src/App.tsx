@@ -66,7 +66,7 @@ function App() {
         <Card>
           <h2>To this lost bbg - SEJAL 💌</h2>
           <Message>
-            Hey prettiest sould inside out!!! 
+            Hey prettiest soul inside out!!! 
             <br /><br />
             I built this little corner of the internet just for you — a soft place where my love for you lives in every pixel. Maybe I don’t always show it right, or say it enough, but this is me trying… trying to show you that you mean a lot to me. This might be small, but  I hope you feel it — in the words, the colors, the care. This is my heart, written in code.
             <br /><br />
@@ -74,7 +74,7 @@ function App() {
             Some will make you laugh, some might make you cry (happy tears, I promise!),
             and all of them come straight from my heart to yours because you don’t have a bf bitch!!. 
             <br /><br />
-            <strong>You are loved, you are cherished, and you are absolutely incredible!And The most imp YOU ARE STRONG</strong>
+            <strong>You are loved, you are cherished, and you are absolutely incredible!And The most imp           YOU ARE STRONG</strong>
           </Message>
         </Card>
 
