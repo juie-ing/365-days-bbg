@@ -1,117 +1,135 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-// Global styles for body
+// Global styles for the body
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #fdf6f9, #f6f0ff);
+    background: linear-gradient(135deg, #fff0f6, #e0c3fc);
     color: #333;
     overflow-x: hidden;
   }
 `;
 
-// Layout container
+// App layout container
 const AppContainer = styled.div`
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
-// Title
+// Page title
 const Title = styled.h1`
   text-align: center;
   font-size: 3rem;
   color: #7d5fff;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 `;
 
-// Tagline
+// Page tagline
 const Tagline = styled.h2`
   text-align: center;
   font-size: 1.2rem;
   font-weight: 400;
-  color: #555;
+  color: #666;
+  margin-bottom: 2rem;
 `;
 
-// Main content row
+// Flex container for content
 const ContentRow = styled.div`
   display: flex;
-  margin-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  margin-top: 2rem;
 `;
 
-// Left card container
+// Card container (left column)
 const CardColumn = styled.div`
   flex: 1;
+  min-width: 320px;
   max-width: 55%;
 `;
 
-// Placeholder for future image or design
+// Right section (for future image or design)
 const RightSpace = styled.div`
   flex: 1;
+  min-width: 320px;
   min-height: 300px;
+  background: url('https://source.unsplash.com/400x400/?love,heart') no-repeat center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 `;
 
-// Card
+// Card design
 const Card = styled.div`
-  background: linear-gradient(to right, #fdb1d7, #d9b4f3);
+  background: linear-gradient(to right, #ffc8dd, #d0bfff);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
   white-space: pre-line;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    margin-top: 0;
+    color: #5c3dc4;
   }
 `;
 
-// Message text
+// Text content in cards
 const Message = styled.p`
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
   margin: 0;
-  color: #333;
 `;
 
-// Footer
-const Footer = styled.footer`
-  text-align: center;
-  font-size: 1rem;
-  color: #888;
-  margin-top: 3rem;
-`;
-
-// Button Container
+// Button container
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 `;
 
-// Button
+// Styled button
 const Button = styled.button`
   background-color: #7d5fff;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.9rem 2rem;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 14px rgba(125, 95, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
 
   &:hover {
     background-color: #5f3dc4;
+    transform: scale(1.03);
   }
+`;
+
+// Footer section
+const Footer = styled.footer`
+  text-align: center;
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 4rem;
 `;
 
 function App() {
   const introMessage = `
-  To this lost bbg - SEJAL 💌
+To this lost bbg - SEJAL 💌
 Hey prettiest soul inside out!
 I made this little corner of internet just for you — where every pixel holds a piece of my love.
 I may not always say it right, but this is me trying… to show you how much you mean to me.
@@ -120,7 +138,6 @@ Because you don’t have a bf, bitch!!!!`;
 
   const todayMessage = `
 🎉 Welcome to the first day!
-
 Starting this with saying that you are really AMAZING as fuck!`;
 
   return (
@@ -132,22 +149,22 @@ Starting this with saying that you are really AMAZING as fuck!`;
 
         <ContentRow>
           <CardColumn>
-          <Card>
+            <Card>
               <Message>{introMessage}</Message>
-         </Card>
-
+            </Card>
             <Card>
               <h3>Today's Message 📅</h3>
               <Message>{todayMessage}</Message>
             </Card>
           </CardColumn>
 
-          <RightSpace>{/* Reserved for image/design */}</RightSpace>
-          <ButtonContainer>
+          <RightSpace />
+        </ContentRow>
+
+        <ButtonContainer>
           <Button>Time Travel</Button>
           <Button>Surprise Me</Button>
         </ButtonContainer>
-        </ContentRow>
 
         <Footer>
           Made with 💖 and lots of love for the most amazing person I know.
