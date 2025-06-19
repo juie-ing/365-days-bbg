@@ -147,15 +147,14 @@ Starting this with saying that you are really AMAZING as fuck!`;
           </CardColumn>
 
           <RightSpace>{/* Reserved for image/design */}</RightSpace>
-        </ContentRow>
-
-        <ButtonContainer>
+          <ButtonContainer>
           <Button>Time Travel</Button>
           <Button>Surprise Me</Button>
         </ButtonContainer>
         <Card>
               <Message>{introMessage}</Message>
          </Card>
+        </ContentRow>
 
         <Footer>
           Made with 💖 and lots of love for the most amazing person I know.
