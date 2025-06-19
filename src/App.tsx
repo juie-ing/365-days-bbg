@@ -111,19 +111,17 @@ const Button = styled.button`
 
 function App() {
   const introMessage = `
+  To this lost bbg - SEJAL 💌
 Hey prettiest soul inside out!!!
-
 I built this little corner of the internet just for you — a soft place where my love for you lives in every pixel.
 Maybe I don’t always show it right, or say it enough, but this is me trying… trying to show you that you mean a lot to me.
 This might be small, but I hope you feel it — in the words, the colors, the care. This is my heart, written in code.
-
 Every single day of this year, there's a special message waiting for you here.
 Some will make you laugh, some might make you cry (happy tears, I promise!),
 and all of them come straight from my heart to yours because you don’t have a bf bitch!!
-
-YOU ARE LOVED,
-YOU ARE CHERISHED,
-YOU ARE ABSOLUTELY INCREDIBLE!
+You are loved,
+You are cherished,
+You are absolutely incredible!
 And the most important...
 YOU ARE STRONG.`;
 
@@ -137,7 +135,7 @@ Starting this with saying that you are really AMAZING as fuck!`;
       <GlobalStyle />
       <AppContainer>
         <Title>365 Days BBG</Title>
-        <Tagline>To this lost bbg - SEJAL 💌</Tagline>
+        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
 
         <ContentRow>
           <CardColumn>
