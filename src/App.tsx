@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
-// Global Styles
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fff0f5, #e0c3fc);
-    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #FFF8F0;
+    color: #4B2C36;
     overflow-x: hidden;
   }
 `;
@@ -19,16 +18,17 @@ const AppContainer = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  font-size: 3rem;
-  color: #9d4edd;
-  margin-bottom: 0.2rem;
+  font-size: 3.5rem;
+  color: #C6A5A5;
+  margin-bottom: 0.3rem;
 `;
 
 const Tagline = styled.h2`
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  color: #6c5ce7;
+  color: #4B2C36;
+  margin-bottom: 1.5rem;
 `;
 
 const ContentRow = styled.div`
@@ -42,46 +42,48 @@ const ContentRow = styled.div`
 const CardColumn = styled.div`
   flex: 1;
   max-width: 55%;
-  min-width: 320px;
 `;
 
 const RightSpace = styled.div`
   flex: 1;
-  min-height: 300px;
-  background-image: url('https://i.pinimg.com/originals/29/da/4a/29da4ac10a8a6e42f431f8f1920cb6a5.gif');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  margin-left: 2rem;
-  flex-shrink: 0;
-  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 `;
 
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+const SideImage = styled.img`
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 `;
 
 const Card = styled.div`
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 1.8rem;
+  background-color: #F7DAD9;
+  border-left: 6px solid #FF6B6B;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
   margin-bottom: 2rem;
-  animation: ${fadeIn} 0.6s ease forwards;
-  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+  white-space: pre-line;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(255, 107, 107, 0.2);
+  }
 `;
 
 const Message = styled.p`
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  white-space: pre-wrap;
-  color: #444;
+  margin: 0;
+  color: #4B2C36;
 `;
 
 const Footer = styled.footer`
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #888;
   margin-top: 3rem;
 `;
@@ -89,56 +91,51 @@ const Footer = styled.footer`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 3rem;
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 `;
 
 const Button = styled.button`
-  background-color: #7d5fff;
-  color: white;
+  background-color: #4B2C36;
+  color: #FFF8F0;
   border: none;
-  padding: 0.9rem 1.8rem;
-  font-size: 1rem;
+  padding: 1.1rem 2.8rem;
+  font-size: 1.2rem;
   border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(75, 44, 54, 0.2);
 
   &:hover {
-    background-color: #5f3dc4;
-    transform: scale(1.05);
+    background-color: #FF6B6B;
+    color: white;
+    animation: ${pulse} 0.6s ease-in-out;
   }
 `;
 
-const messages: string[] = [
-  `To this lost bbg - SEJAL 💌
-Hey prettiest soul inside out!
-I made this little corner of internet just for you — where every pixel holds a piece of my love.
-I may not always say it right, but this is me trying… to show you how much you mean to me.
-Each day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).
-Because you don’t have a bf, bitch!!!!`,
-
-  `🎉 Welcome to the first day!
-Starting this with saying that you are really AMAZING as fuck!`,
-
-  `Day 2 ✨
-Remember how bright your smile is?
-Even cloudy days bow down to your glow.`,
-
-  `Day 3 🌸
-Your presence feels like the first sip of chai on a cold morning.
-Comforting, warm, perfect.`
-  // Add more messages up to 365...
-];
-
 function App() {
-  const [dayIndex, setDayIndex] = useState(0);
+  const startDate = new Date(2025, 6, 5); // July 5, 2025
+  const today = new Date();
+  const diffDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
 
-  useEffect(() => {
-    const startDate = new Date('2025-01-01');
-    const today = new Date();
-    const diff = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
-    setDayIndex(Math.min(diff, messages.length - 1));
-  }, []);
+  const messages = [
+    `To this lost bbg - SEJAL 💌\nHey prettiest soul inside out!\nI made this little corner of internet just for you — where every pixel holds a piece of my love.\nI may not always say it right, but this is me trying… to show you how much you mean to me.\nEach day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).\nBecause you don’t have a bf, bitch!!!!`,
+    `🎉 Welcome to the first day!\n\nStarting this with saying that you are really AMAZING as fuck!`,
+    // Add more messages below...
+  ];
+
+  const birthdayMessage = `🎂 Happy Birthday, SEJAL! 🎂\n\nYou are light wrapped in stardust, strength wrapped in a smile.\nOn this day, know that the world became brighter because of you.\nToday is for celebrating YOU — your beauty, your grace, your soul.\nYou deserve joy beyond galaxies. Love you endlessly 💖`;
+
+  const isBirthday = today.getDate() === 1 && today.getMonth() === 2 && today.getFullYear() === 2026;
+  const dailyMessage = isBirthday ? birthdayMessage : messages[(diffDays + 1) % messages.length];
 
   return (
     <>
@@ -154,12 +151,14 @@ function App() {
             </Card>
 
             <Card>
-              <h3>Today's Message 📅</h3>
-              <Message>{messages[dayIndex]}</Message>
+              <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 📅</h3>
+              <Message>{dailyMessage}</Message>
             </Card>
           </CardColumn>
 
-          <RightSpace />
+          <RightSpace>
+            <SideImage src="/assets/images/Home.jpg" alt="Lovely placeholder" />
+          </RightSpace>
         </ContentRow>
 
         <ButtonContainer>
@@ -168,7 +167,7 @@ function App() {
         </ButtonContainer>
 
         <Footer>
-          Made with 💖 and softest code for the most precious soul I know.
+          Made with 💖 and lots of love for the most amazing person I know.
         </Footer>
       </AppContainer>
     </>
