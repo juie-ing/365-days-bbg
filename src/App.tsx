@@ -149,10 +149,10 @@ function App() {
     <>
       <GlobalStyle />
       <AppContainer>
+      <Title>365 Days BBG</Title>
+      <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
 
         <ContentRow>
-        <Title>365 Days BBG</Title>
-        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
           <CardColumn>
             <Card>
               <Message>{messages[0]}</Message>
