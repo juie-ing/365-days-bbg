@@ -19,7 +19,7 @@ const AppContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 3.5rem;
-  color:rgb(251, 144, 144);
+  color: rgb(251, 144, 144);
   margin-bottom: 0.3rem;
 `;
 
@@ -27,7 +27,7 @@ const Tagline = styled.h2`
   text-align: center;
   font-size: 1.3rem;
   font-weight: 400;
-  color:rgb(95, 46, 62);
+  color: rgb(95, 46, 62);
   margin-bottom: 1.5rem;
 `;
 
@@ -39,17 +39,16 @@ const ContentRow = styled.div`
   flex-wrap: wrap;
 `;
 
-const CardColumn = styled.div`
-  flex: 1;
-  max-width: 55%;
-`;
-
-const RightSpace = styled.div`
+const SideColumn = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem;
+  align-items: center;
+`;
+
+const CenterColumn = styled.div`
+  flex: 2;
+  max-width: 700px;
 `;
 
 const SideImage = styled.img`
@@ -81,6 +80,13 @@ const Message = styled.p`
   color: #4B2C36;
 `;
 
+const DateText = styled.p`
+  font-size: 1rem;
+  text-align: right;
+  color: #888;
+  margin-bottom: 1rem;
+`;
+
 const Footer = styled.footer`
   text-align: center;
   font-size: 1rem;
@@ -102,7 +108,7 @@ const pulse = keyframes`
 `;
 
 const Button = styled.button`
-  background-color: #FF6B6B ;
+  background-color: #FF6B6B;
   color: #FFF8F0;
   border: none;
   padding: 1.1rem 2.8rem;
@@ -122,51 +128,64 @@ const Button = styled.button`
 `;
 
 function App() {
-  const startDate = new Date(2025, 6, 19); // July 5, 2025
+  const startDate = new Date(2025, 5, 19); // June 19, 2025
+  const birthday = new Date(2026, 2, 1); // March 1, 2026
   const today = new Date();
-  const diffDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+
+  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  const dayCountText = `🔢 Day ${diffDays + 1} of 365`;
+
+  const timeDiff = birthday.getTime() - today.getTime();
+  const daysLeft = Math.max(Math.ceil(timeDiff / (1000 * 60 * 60 * 24)), 0);
+  const birthdayCountdown = `🎉 ${daysLeft} day${daysLeft === 1 ? '' : 's'} left until Sejal's Birthday!`;
 
   const messages = [
     `To this lost bbg - SEJAL 💌\nHey prettiest soul inside out!\nI made this little corner of internet just for you — where every pixel holds a piece of my love.\nMaybe I don’t always show it right, or say it enough,  but this is me trying… to show you how much you mean to me.\nEach day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).\nBecause you don’t have a bf, bitch!!!!`,
-    `🎉 Welcome to the first day!\n\nStarting this with saying that you are really AMAZING as fuck!`,
-    // Add more messages below...
+    `🎉 Welcome to the first day!\n\nStarting this with saying that you are really AMAZING as fuck!`
   ];
 
   const birthdayMessage = `🎂 Happy Birthday, SEJAL! 🎂\n\nYou are light wrapped in stardust, strength wrapped in a smile.\nOn this day, know that the world became brighter because of you.\nToday is for celebrating YOU — your beauty, your grace, your soul.\nYou deserve joy beyond galaxies. Love you endlessly 💖`;
 
   const isBirthday = today.getDate() === 1 && today.getMonth() === 2 && today.getFullYear() === 2026;
   const dailyMessage = isBirthday ? birthdayMessage : messages[(diffDays + 1) % messages.length];
-  const SideImage = styled.img`
-  width: 75%; /* reduced from 90% */
-  max-width: 300px; /* to prevent it from growing too large */
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
-`;
 
+  const formattedDate = today.toLocaleDateString('en-IN', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
     <>
       <GlobalStyle />
       <AppContainer>
-      <Title>365 Days BBG</Title>
-      <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
+        <Title>365 Days BBG</Title>
+        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
 
         <ContentRow>
-          <CardColumn>
+          <SideColumn>
+            <SideImage src="/assets/gallery/HomeL.jpg" alt="Left decoration" />
+          </SideColumn>
+
+          <CenterColumn>
+            <DateText>📅 {formattedDate}</DateText>
+            <DateText>{dayCountText}</DateText>
+            {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
+
             <Card>
               <Message>{messages[0]}</Message>
             </Card>
 
             <Card>
-              <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 📌</h3>
+              <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 💖</h3>
               <Message>{dailyMessage}</Message>
             </Card>
-          </CardColumn>
+          </CenterColumn>
 
-          <RightSpace>
-            <SideImage src="/assets/gallery/Home.jpg" alt="Lovely placeholder" />
-          </RightSpace>
+          <SideColumn>
+            <SideImage src="/assets/gallery/Home.jpg" alt="Right decoration" />
+          </SideColumn>
         </ContentRow>
 
         <ButtonContainer>
