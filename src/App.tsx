@@ -33,7 +33,7 @@ const Tagline = styled.h2`
 
 const ContentRow = styled.div`
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -43,7 +43,8 @@ const SideColumn = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 0.5rem;
 `;
 
 const CenterColumn = styled.div`
@@ -81,10 +82,10 @@ const Message = styled.p`
 `;
 
 const DateText = styled.p`
-  font-size: 1rem;
-  text-align: right;
-  color: #888;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #6b4b53;
+  margin: 0.3rem 0;
 `;
 
 const Footer = styled.footer`
@@ -97,7 +98,7 @@ const Footer = styled.footer`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 3rem;
 `;
 
@@ -111,12 +112,14 @@ const Button = styled.button`
   background-color: #FF6B6B;
   color: #FFF8F0;
   border: none;
-  padding: 1.1rem 2.8rem;
-  font-size: 1.2rem;
+  padding: 1.4rem 2.8rem;
+  font-size: 1.15rem;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1.4;
   transition: all 0.3s ease;
   box-shadow: 0 8px 18px rgba(75, 44, 54, 0.2);
 
@@ -129,11 +132,10 @@ const Button = styled.button`
 
 function App() {
   const startDate = new Date(2025, 5, 19); // June 19, 2025
-  const birthday = new Date(2026, 2, 1); // March 1, 2026
+  const birthday = new Date(2026, 2, 1);   // March 1, 2026
   const today = new Date();
 
   const diffDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
-
   const dayCountText = `🔢 Day ${diffDays + 1} of 365`;
 
   const timeDiff = birthday.getTime() - today.getTime();
@@ -170,11 +172,10 @@ function App() {
           </SideColumn>
 
           <CenterColumn>
-            
-
             <Card>
               <Message>{messages[0]}</Message>
             </Card>
+
             <DateText>📅 {formattedDate}</DateText>
             <DateText>{dayCountText}</DateText>
             {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
@@ -191,8 +192,14 @@ function App() {
         </ContentRow>
 
         <ButtonContainer>
-          <Button>Time Travel</Button>
-          <Button>Surprise Me</Button>
+          <Button>
+            Time Travel
+            <br />⏳
+          </Button>
+          <Button>
+            Surprise Me
+            <br />🎁
+          </Button>
         </ButtonContainer>
 
         <Footer>
