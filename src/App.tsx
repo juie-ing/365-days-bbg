@@ -147,7 +147,7 @@ function App() {
 
   const messages = [
     `To this lost bbg - SEJAL 💌\nHey prettiest soul inside out!\nI made this little corner of internet just for you — where every pixel holds a piece of my love.\nMaybe I don’t always show it right, or say it enough,  but this is me trying… to show you how much you mean to me.\nEach day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).\nBecause you don’t have a bf, bitch!!!!`,
-    `🎉 Welcome to the first day!\n\nStarting this with saying that you are really AMAZING as fuck!`
+    `🎉 Welcome to the first day!\nStarting this with saying that you are really AMAZING as fuck!\nThis the first and special one as you are. `
   ];
 
   const birthdayMessage = `🎂 Happy Birthday, SEJAL! 🎂\n\nYou are light wrapped in stardust, strength wrapped in a smile.\nOn this day, know that the world became brighter because of you.\nToday is for celebrating YOU — your beauty, your grace, your soul.\nYou deserve joy beyond galaxies. Love you endlessly 💖`;
@@ -176,15 +176,14 @@ function App() {
           </SideColumn>
 
           <CenterColumn>
-            <Card>
-              <Message>{messages[0]}</Message>
-            </Card>
-            <DateText>{dayCountText}</DateText>
-
-            <Card>
+          <Card>
               <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 💖</h3>
               
               <Message>{dailyMessage}</Message>
+            </Card>
+            <DateText>{dayCountText}</DateText>
+            <Card>
+              <Message>{messages[0]}</Message>
             </Card>
             <DateText>📅 {formattedDate}</DateText>
             {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
