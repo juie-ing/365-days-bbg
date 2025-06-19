@@ -1,153 +1,150 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
-// Global styling
+// ---- GLOBAL STYLES ----
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right top, #fff0f5, #e0c3fc);
-    color: #333;
+    background: #fef6fa;
+    color: #2a2a2a;
     overflow-x: hidden;
   }
 `;
 
-// Main container
+// ---- ANIMATED BACKGROUND ----
+const aura = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+
+const AuraBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, #ffc3a0, #ffafbd, #d299c2, #a18cd1);
+  background-size: 600% 600%;
+  animation: ${aura} 20s ease infinite;
+  z-index: -1;
+`;
+
+// ---- LAYOUT ----
 const AppContainer = styled.div`
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
 `;
 
-// Title styling
 const Title = styled.h1`
-  text-align: center;
   font-size: 3.5rem;
-  color: #a061ff;
-  margin-bottom: 0.3rem;
-  letter-spacing: 1px;
-`;
-
-// Tagline styling
-const Tagline = styled.h2`
   text-align: center;
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: #777;
-  margin-bottom: 2.5rem;
+  color: #7028e4;
+  margin-bottom: 0.3rem;
 `;
 
-// Flex row for layout
+const Tagline = styled.p`
+  text-align: center;
+  font-size: 1.2rem;
+  color: #5f5f5f;
+  margin-bottom: 2rem;
+`;
+
 const ContentRow = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 `;
 
-// Left side column
 const CardColumn = styled.div`
   flex: 1;
-  min-width: 340px;
-  max-width: 55%;
+  min-width: 300px;
 `;
 
-// Right side image box
-const RightSpace = styled.div`
-  flex: 1;
-  min-width: 340px;
-  min-height: 380px;
-  background: url('https://source.unsplash.com/400x500/?flowers,clouds') no-repeat center;
-  background-size: cover;
-  border-radius: 25px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-`;
-
-// Cute glassy card
 const Card = styled.div`
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   padding: 2rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease-in-out;
-  white-space: pre-line;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 2rem;
+  transition: 0.3s ease;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  h3 {
-    margin-top: 0;
-    color: #6c4cff;
-    font-weight: 600;
+    transform: translateY(-5px);
   }
 `;
 
-// Message text
 const Message = styled.p`
   font-size: 1.1rem;
+  white-space: pre-line;
   line-height: 1.8;
-  color: #444;
-  margin: 0;
+  color: #333;
 `;
 
-// Buttons layout
+const Footer = styled.footer`
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 3rem;
+`;
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1rem;
 `;
 
-// Button style
 const Button = styled.button`
-  background: linear-gradient(to right, #a061ff, #ff85b3);
-  color: #fff;
+  background: #7028e4;
+  color: white;
+  padding: 0.8rem 1.6rem;
   border: none;
-  padding: 0.9rem 2rem;
+  border-radius: 10px;
   font-size: 1rem;
-  border-radius: 12px;
   cursor: pointer;
-  font-weight: 500;
-  box-shadow: 0 4px 14px rgba(160, 97, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(255, 133, 179, 0.4);
+    background: #501ec9;
   }
 `;
 
-// Footer
-const Footer = styled.footer`
-  text-align: center;
-  font-size: 0.95rem;
-  color: #aaa;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-`;
+// ---- AUTO MESSAGES ----
+const messages: string[] = [
+  "Day 1: You’re a beautiful soul — don’t forget that.",
+  "Day 2: Smile a little more today. You’re doing better than you think!",
+  "Day 3: The world is lucky to have someone like you.",
+  "Day 4: You bring light wherever you go.",
+  "Day 5: Never underestimate how far you’ve come."
+  // Add more messages for each day (up to 365)...
+];
 
+function getTodayMessage(): string {
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+  return messages[(dayOfYear - 1) % messages.length];
+}
+
+// ---- APP ----
 function App() {
   const introMessage = `
 To this lost bbg - SEJAL 💌
 Hey prettiest soul inside out!
-I made this little corner of internet just for you — where every pixel holds a piece of my love.
-I may not always say it right, but this is me trying… to show you how much you mean to me.
-Each day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).
-Because you don’t have a bf, bitch!!!!`;
+This space is crafted with love — every pixel, every word, every shade.
+You may not have a bf, but guess what? You have me, every single day.
+Come here when you're low, when you're smiling, or when you just want to feel seen.
+You're not alone. You're admired. You are LOVED.`;
 
-  const todayMessage = `
-🎉 Welcome to the first day!
-Starting this with saying that you are really AMAZING as fuck!`;
+  const todayMessage = getTodayMessage();
 
   return (
     <>
       <GlobalStyle />
+      <AuraBackground />
       <AppContainer>
         <Title>365 Days BBG</Title>
         <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
@@ -157,13 +154,16 @@ Starting this with saying that you are really AMAZING as fuck!`;
             <Card>
               <Message>{introMessage}</Message>
             </Card>
+
             <Card>
               <h3>Today's Message 📅</h3>
               <Message>{todayMessage}</Message>
             </Card>
           </CardColumn>
 
-          <RightSpace />
+          <CardColumn>
+            <img src="https://i.imgur.com/N3YrE2O.png" alt="Cute Aura Girl" style={{ width: '100%', borderRadius: '20px' }} />
+          </CardColumn>
         </ContentRow>
 
         <ButtonContainer>
@@ -171,9 +171,7 @@ Starting this with saying that you are really AMAZING as fuck!`;
           <Button>Surprise Me</Button>
         </ButtonContainer>
 
-        <Footer>
-          Made with 💖 and soft code just for the cutest soul ever.
-        </Footer>
+        <Footer>Built with infinite care & love 💖</Footer>
       </AppContainer>
     </>
   );
