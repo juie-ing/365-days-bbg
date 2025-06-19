@@ -168,7 +168,7 @@ function App() {
       <AppContainer>
         <Title>365 Days Bbg</Title>
         <Tagline>Getting Lost in You? That’s My Daily Routine, bbg.</Tagline>
-        {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
+      
 
         <ContentRow>
           <SideColumn>
@@ -183,7 +183,7 @@ function App() {
 
             <Card>
               <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 💖</h3>
-              <DateText>📅 {formattedDate}</DateText>
+              
               <Message>{dailyMessage}</Message>
             </Card>
           </CenterColumn>
@@ -191,6 +191,8 @@ function App() {
           <SideColumn>
             <SideImage src="/assets/gallery/Home.jpg" alt="Right decoration" />
           </SideColumn>
+          <DateText>📅 {formattedDate}</DateText>
+          {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
         </ContentRow>
 
         <ButtonContainer>
