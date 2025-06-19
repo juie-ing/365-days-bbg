@@ -19,7 +19,7 @@ const AppContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 3.5rem;
-  color: rgb(251, 144, 144);
+  color: rgb(255, 117, 117);
   margin-bottom: 0.3rem;
 `;
 
@@ -125,6 +125,11 @@ const Button = styled.button`
   line-height: 1.4;
   transition: all 0.3s ease;
   box-shadow: 0 8px 18px rgba(75, 44, 54, 0.2);
+  
+  /* 💡 Added width control */
+  min-width: 220px;
+  max-width: 100%;
+  width: 240px;
 
   &:hover {
     background-color: #4B2C36;
@@ -132,6 +137,7 @@ const Button = styled.button`
     animation: ${pulse} 0.6s ease-in-out;
   }
 `;
+
 
 function App() {
   const startDate = new Date(2025, 5, 19); // June 19, 2025
