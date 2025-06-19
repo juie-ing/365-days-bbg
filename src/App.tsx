@@ -46,7 +46,7 @@ const SideColumn = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-top: 0;         // remove any internal spacing
-  margin-top: -8rem;      // pull it closer to top
+  margin-top: -7rem;      // pull it closer to top
 `;
 
 
@@ -129,7 +129,7 @@ const Button = styled.button`
   /* 💡 Added width control */
   min-width: 220px;
   max-width: 100%;
-  width: 240px;
+  width: 340px;
 
   &:hover {
     background-color: #4B2C36;
