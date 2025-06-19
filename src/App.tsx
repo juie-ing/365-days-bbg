@@ -132,7 +132,8 @@ function App() {
   const birthday = new Date(2026, 2, 1); // March 1, 2026
   const today = new Date();
 
-  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  const diffDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+
   const dayCountText = `🔢 Day ${diffDays + 1} of 365`;
 
   const timeDiff = birthday.getTime() - today.getTime();
