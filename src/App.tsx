@@ -157,7 +157,7 @@ function App() {
           </CardColumn>
 
           <RightSpace>
-            <SideImage src="/assets/images/Home.jpg" alt="Lovely placeholder" />
+            <SideImage src="/assets/gallery/Home.jpg" alt="Lovely placeholder" />
           </RightSpace>
         </ContentRow>
 
