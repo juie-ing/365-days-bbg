@@ -1,13 +1,93 @@
+/* style.css – BBG Custom Styling 💘 */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  color: #4b004b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  background-color: #ffccdd;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+  font-size: 1.5em;
+  color: #c71585;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #8b005d;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ff69b4;
+}
+
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #d63384;
+}
+
+.container p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.image-box {
+  margin-top: 25px;
+}
+
+.image-box img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 25px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff85c1;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .container h2 {
+    font-size: 2em;
+  }
 }
