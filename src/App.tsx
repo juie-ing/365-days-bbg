@@ -46,7 +46,7 @@ const SideColumn = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-top: 0;         // remove any internal spacing
-  margin-top: -1rem;      // pull it closer to top
+  margin-top: -4rem;      // pull it closer to top
 `;
 
 
