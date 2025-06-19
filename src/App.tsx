@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AppContainer = styled.div`
-  padding: 2rem;
+  padding: 1.3rem;
 `;
 
 const Title = styled.h1`
@@ -33,19 +33,22 @@ const Tagline = styled.h2`
 
 const ContentRow = styled.div`
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;  // reduced margin
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
 `;
+
 
 const SideColumn = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 0.5rem;
+  padding-top: 0;         // remove any internal spacing
+  margin-top: -1rem;      // pull it closer to top
 `;
+
 
 const CenterColumn = styled.div`
   flex: 2;
@@ -163,8 +166,9 @@ function App() {
     <>
       <GlobalStyle />
       <AppContainer>
-        <Title>365 Days BBG</Title>
-        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
+        <Title>365 Days Bbg</Title>
+        <Tagline>Getting Lost in You? That’s My Daily Routine, bbg.</Tagline>
+        {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
 
         <ContentRow>
           <SideColumn>
@@ -175,13 +179,11 @@ function App() {
             <Card>
               <Message>{messages[0]}</Message>
             </Card>
-
-            <DateText>📅 {formattedDate}</DateText>
             <DateText>{dayCountText}</DateText>
-            {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
 
             <Card>
               <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 💖</h3>
+              <DateText>📅 {formattedDate}</DateText>
               <Message>{dailyMessage}</Message>
             </Card>
           </CenterColumn>
