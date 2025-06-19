@@ -151,10 +151,12 @@ Starting this with saying that you are really AMAZING as fuck!`;
           <Button>Time Travel</Button>
           <Button>Surprise Me</Button>
         </ButtonContainer>
+        </ContentRow>
+
+        
         <Card>
               <Message>{introMessage}</Message>
          </Card>
-        </ContentRow>
 
         <Footer>
           Made with 💖 and lots of love for the most amazing person I know.
