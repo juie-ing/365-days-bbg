@@ -19,7 +19,7 @@ const AppContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 3.5rem;
-  color: #C6A5A5;
+  color:rgb(251, 144, 144);
   margin-bottom: 0.3rem;
 `;
 
@@ -27,7 +27,7 @@ const Tagline = styled.h2`
   text-align: center;
   font-size: 1.3rem;
   font-weight: 400;
-  color: #4B2C36;
+  color:rgb(95, 46, 62);
   margin-bottom: 1.5rem;
 `;
 
@@ -102,7 +102,7 @@ const pulse = keyframes`
 `;
 
 const Button = styled.button`
-  background-color: #4B2C36;
+  background-color: #FF6B6B ;
   color: #FFF8F0;
   border: none;
   padding: 1.1rem 2.8rem;
@@ -115,19 +115,19 @@ const Button = styled.button`
   box-shadow: 0 8px 18px rgba(75, 44, 54, 0.2);
 
   &:hover {
-    background-color: #FF6B6B;
+    background-color: #4B2C36;
     color: white;
     animation: ${pulse} 0.6s ease-in-out;
   }
 `;
 
 function App() {
-  const startDate = new Date(2025, 6, 5); // July 5, 2025
+  const startDate = new Date(2025, 6, 19); // July 5, 2025
   const today = new Date();
   const diffDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
 
   const messages = [
-    `To this lost bbg - SEJAL 💌\nHey prettiest soul inside out!\nI made this little corner of internet just for you — where every pixel holds a piece of my love.\nI may not always say it right, but this is me trying… to show you how much you mean to me.\nEach day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).\nBecause you don’t have a bf, bitch!!!!`,
+    `To this lost bbg - SEJAL 💌\nHey prettiest soul inside out!\nI made this little corner of internet just for you — where every pixel holds a piece of my love.\nMaybe I don’t always show it right, or say it enough,  but this is me trying… to show you how much you mean to me.\nEach day, there’s a special message here — some to make you laugh, maybe even cry (happy tears, I promise).\nBecause you don’t have a bf, bitch!!!!`,
     `🎉 Welcome to the first day!\n\nStarting this with saying that you are really AMAZING as fuck!`,
     // Add more messages below...
   ];
@@ -159,7 +159,7 @@ function App() {
             </Card>
 
             <Card>
-              <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 📅</h3>
+              <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 📌</h3>
               <Message>{dailyMessage}</Message>
             </Card>
           </CardColumn>
@@ -175,7 +175,7 @@ function App() {
         </ButtonContainer>
 
         <Footer>
-          Made with 💖 and lots of love for the most amazing person I know.
+          Made with lots of love for the most amazing person I know.
         </Footer>
       </AppContainer>
     </>
