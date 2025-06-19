@@ -136,15 +136,23 @@ function App() {
 
   const isBirthday = today.getDate() === 1 && today.getMonth() === 2 && today.getFullYear() === 2026;
   const dailyMessage = isBirthday ? birthdayMessage : messages[(diffDays + 1) % messages.length];
+  const SideImage = styled.img`
+  width: 75%; /* reduced from 90% */
+  max-width: 300px; /* to prevent it from growing too large */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+`;
+
 
   return (
     <>
       <GlobalStyle />
       <AppContainer>
-        <Title>365 Days BBG</Title>
-        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
 
         <ContentRow>
+        <Title>365 Days BBG</Title>
+        <Tagline>Getting Lost in You? That’s My Daily Routine, BBG.</Tagline>
           <CardColumn>
             <Card>
               <Message>{messages[0]}</Message>
