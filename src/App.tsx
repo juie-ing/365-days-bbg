@@ -170,13 +170,14 @@ function App() {
           </SideColumn>
 
           <CenterColumn>
-            <DateText>📅 {formattedDate}</DateText>
-            <DateText>{dayCountText}</DateText>
-            {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
+            
 
             <Card>
               <Message>{messages[0]}</Message>
             </Card>
+            <DateText>📅 {formattedDate}</DateText>
+            <DateText>{dayCountText}</DateText>
+            {!isBirthday && <DateText>{birthdayCountdown}</DateText>}
 
             <Card>
               <h3 style={{ color: '#C6A5A5', marginBottom: '1rem' }}>Today's Message 💖</h3>
